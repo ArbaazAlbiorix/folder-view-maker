@@ -1,0 +1,41 @@
+<h1>FOLDER STRUCTURE MAKER</h1>
+
+<div class="tree">
+  <button (click)="addNodesData()"  type="button">Add folder to root</button>
+</div>
+
+
+<app-tree-node [totalTrees]="totalTrees" ></app-tree-node>
+
+<div>
+
+    <ng-container *ngIf="showParentFormFields">
+      <div>
+        <input [formControl]="fileName" placeholder="Enter Folder Name" type="text">
+
+        <i id="set_icon_mar" (click)="addNodes()" class="fa fa-plus"></i>
+        <i id="set_trash_mar" (click)="delete()" class="fa fa-trash"></i>
+      </div>
+
+    <div class="text-danger-mar" *ngIf="!fileName.valid && (fileName.touched || fileName.dirty)">
+      <div
+        *ngIf="fileName.errors && fileName.errors['required']">
+        Folder name is required.!
+      </div>
+    </div>
+    </ng-container>
+</div>
+
+<div>
+  <textarea readonly rows="10" cols="50">{{totalTrees | json}}</textarea>
+</div>
+
+
+
+
+
+
+
+
+
+

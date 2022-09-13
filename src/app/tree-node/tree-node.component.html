@@ -1,0 +1,60 @@
+<div>
+    <div class="head mar_top" >
+        <ul>
+            <li *ngFor="let childData of totalTrees">
+                <div (mouseover)="showIcons=!showIcons; id = childData.id;" (mouseout)="showIcons=!showIcons">
+                    
+                    <i *ngIf="childData.type === 'folder';" id="mar_file_new" class="fa fa-folder"></i>
+                    <i *ngIf="childData.type === 'file'" id="mar_file_colo" class="fa fa-file"></i>
+
+                    <span >{{childData.name}}
+                        <ng-container *ngIf="childData.id === id">
+                            <i *ngIf="childData.type === 'folder'" id="set_icon_mar"
+                            [ngClass]="{'showChildIcon': showIcons, 'hideChildIcon' : !showIcons }"
+                            (click)="showChilderenButtons(childData)" class="fa fa-plus"></i>
+
+                        <i id="set_trash_mar"
+                            [ngClass]="{'showChildIcon': showIcons, 'hideChildIcon' : !showIcons  }"
+                            (click)="removeChidren(childData)" class="fa fa-trash"></i>
+                        </ng-container>
+                    </span>
+                </div>
+
+                    <app-tree-node [totalTrees]="childData.children" ></app-tree-node>
+                
+                <ng-container *ngIf="childData.id === childId">
+                    <div *ngIf="showButtons === true && showChildFormFields == false" class="button_mar">
+                        <button (click)="addType('file')">File</button>
+                        <button (click)="addType('folder')">Folder</button>
+                      </div>
+
+                      <ng-container *ngIf="showChildFormFields">
+                        <div class="set_position">
+                            <div>
+                                <i *ngIf="type === 'folder';" id="mar_file" class="fa fa-folder"></i>
+                                <i *ngIf="type === 'file'" id="mar_file_colo" class="fa fa-file"></i>
+                                
+                                <input [formControl]="childFileName" placeholder="Enter name" type="text">
+                                <i id="set_child_icon_mar"  (click)="addChilderen(childData)" class="fa fa-plus"></i>
+                                <i id="set_trash_mar" (click)="delete()" class="fa fa-trash"></i>
+                            </div>
+                
+                            <div class="text-danger" *ngIf="!childFileName.valid && (childFileName.touched || childFileName.dirty)">
+                                <div
+                                  
+                                  *ngIf="childFileName.errors && childFileName.errors['required']">
+                                  Name is required.!
+                                </div>
+                              </div>
+                      </div>
+                    </ng-container>
+                </ng-container>
+                
+            </li>
+
+        </ul>
+    </div>
+  
+
+   
+</div>

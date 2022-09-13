@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin-left: 1%;
+}
+
+textarea {
+    margin-top: 200px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#set_icon_mar{
+    margin-left: 1%;
+}
+
+
+.head{
+    display: block;
+}
+
+#set_trash_mar{
+    margin-left: 1%;
+}
+

@@ -1,0 +1,51 @@
+.hideIcon{
+    display: none;
+}
+
+
+
+.hideChildIcon{
+    display: none;
+}
+
+
+#mar_file{
+    color: #ebb70ef3;
+    font-size: 20px;
+    margin-right: 2%;
+}
+
+#mar_file_new{
+    color: #ebb70ef3;
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+#mar_file_colo{
+    margin-right: 1%;
+    color: black;
+}
+
+.mar_top{
+    margin-top: 1%;
+}
+
+#set_child_icon_mar{
+    margin-left: 3%;
+    margin-right: 1%;
+}
+
+.text-danger{
+    color: red;
+    margin-left: 29px;
+}
+
+.set_position{
+    width: 400px!important;
+    margin-bottom: 1%
+}
+
+
+.button_mar{
+    margin-bottom: 1%;
+}
